@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../css/display.css';
+
 export class Display extends React.Component {
   render() {
     return (

@@ -1,4 +1,4 @@
-body {
+.button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,8 +8,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
-  min-height: 100vh;
-  font: 14px "Century Gothic", Futura, sans-serif;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  height: 100%;
+  font-size: 20px;
+  border: 1px solid #d1d1d1;
 }
-/*# sourceMappingURL=index.css.map */
+
+.button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=button.css.map */

@@ -1,0 +1,13 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 25%;
+  height: 100%;
+  font-size: 20px;
+  border: 1px solid #d1d1d1;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
