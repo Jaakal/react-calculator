@@ -1,9 +1,7 @@
 import React from 'react';
 
-export class Calculator extends React.Component {
-  render() {
-    return (
-      <div>I'm going become an awesome calculator!</div>
-    );
-  }
-}
+const Calculator = () => (
+  <div>I&apos;m going to become an awesome calculator!</div>
+);
+
+export default Calculator;
