@@ -15,7 +15,7 @@ class App extends React.Component {
       total: null,
       next: null,
       operation: null,
-      result: '0'
+      result: '0',
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -35,12 +35,14 @@ class App extends React.Component {
       case '%':
         {
           const newState = calculate(this.state, buttonName);
-          newState.result = this.state.operation ? newState.next : newState.total;
-          
+          const { operation } = this.state;
+
+          newState.result = operation ? newState.next : newState.total;
+
           if (!newState.result) {
             newState.result = '0';
           }
-          
+
           this.setState(newState);
         }
 
@@ -50,61 +52,70 @@ class App extends React.Component {
       case '×':
       case '÷':
       case '=':
-        if (this.state.operation) {
-          const newState = calculate(this.state, this.state.operation);
-          newState.operation = buttonName === '=' ? null : buttonName;
-          newState.result = newState.total;
-          this.setState(newState);
-        } else if (buttonName !== '=') {
-          this.setState({
-            operation: buttonName
-          });
+        {
+          const { operation } = this.state;
+
+          if (operation) {
+            const newState = calculate(this.state, operation);
+            newState.operation = buttonName === '=' ? null : buttonName;
+            newState.result = newState.total;
+            this.setState(newState);
+          } else if (buttonName !== '=') {
+            this.setState({
+              operation: buttonName,
+            });
+          }
         }
 
         break;
       default:
-        let newValue;
+        {
+          const { total, next, operation } = this.state;
+          let newValue;
 
-        if (this.state.operation) {
-          if (buttonName === '.') {
-            newValue = this.state.next === null ? '0' : this.state.next;
+          if (operation) {
+            if (buttonName === '.') {
+              newValue = next === null ? '0' : next;
+            } else {
+              newValue = next === null || next === '0' ? '' : next;
+            }
+
+            newValue += buttonName;
+
+            this.setState({
+              next: newValue,
+              result: newValue,
+            });
           } else {
-            newValue = this.state.next === null || this.state.next === '0' ? '' : this.state.next;
+            if (buttonName === '.') {
+              newValue = total === null ? '0' : total;
+            } else {
+              newValue = total === null || total === '0' ? '' : total;
+            }
+
+            newValue += buttonName;
+
+            this.setState({
+              total: newValue,
+              result: newValue,
+            });
           }
-
-          newValue += buttonName;
-
-          this.setState({
-            next: newValue,
-            result: newValue
-          });
-        } else {
-          if (buttonName === '.') {
-            newValue = this.state.total === null ? '0' : this.state.total;
-          } else {
-            newValue = this.state.total === null || this.state.total === '0'  ? '' : this.state.total;
-          }
-
-          newValue += buttonName;
-
-          this.setState({
-            total: newValue,
-            result: newValue
-          });
         }
-        
+
         break;
     }
   }
 
   render() {
+    const { result } = this.state;
+
     return (
       <div id="calculator">
-        <Display result={this.state.result}/>
-        <ButtonPanel clickHandler={this.handleClick}/>
+        <Display result={result} />
+        <ButtonPanel clickHandler={this.handleClick} />
       </div>
     );
   }
-};
+}
 
 export default App;
