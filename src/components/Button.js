@@ -4,13 +4,17 @@ import PropTypes from 'prop-types';
 import '../css/button.css';
 
 const Button = props => {
-  const { name, color, wide } = props;
+  const { name, color, wide, clickHandler } = props;
   const buttonStyle = { backgroundColor: color };
 
   buttonStyle.flexBasis = wide ? '50%' : '25%';
 
+  const handleClick = () => {
+    clickHandler(name);
+  }
+
   return (
-    <div className="button" style={buttonStyle}>{name}</div>
+    <div onClick={handleClick} className="button" style={buttonStyle}>{name}</div>
   );
 };
 
