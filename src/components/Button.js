@@ -4,10 +4,7 @@ import PropTypes from 'prop-types';
 import '../css/button.css';
 
 const Button = props => {
-  const { name } = props;
-  const { color } = props;
-  const { wide } = props;
-
+  const { name, color, wide } = props;
   const buttonStyle = { backgroundColor: color };
 
   buttonStyle.flexBasis = wide ? '50%' : '25%';
