@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, queryByAttribute } from '@testing-library/react';
-import App from '../components/App';
+import App from '../components/ButtonPanel';
 
 let getById;
 let getByClass;
