@@ -1,14 +1,26 @@
-import Big from './big.mjs';
+import Big from 'big';
 
-export const operate = (numberOne, numberTwo, operation) => {
+const operate = (numberOne, numberTwo, operation) => {
+  let operationValue;
+
   switch (operation) {
     case '+':
-      return Big(numberOne) + Big(numberTwo);
+      operationValue = Big(numberOne) + Big(numberTwo);
+      break;
     case '-':
-      return Big(numberOne) - Big(numberTwo);
+      operationValue = Big(numberOne) - Big(numberTwo);
+      break;
     case '×':
-      return Big(numberOne) * Big(numberTwo);
+      operationValue = Big(numberOne) * Big(numberTwo);
+      break;
     case '÷':
-      return Big(numberOne) / Big(numberTwo);
+      operationValue = Big(numberOne) / Big(numberTwo);
+      break;
+    default:
+      break;
   }
-}
+
+  return operationValue;
+};
+
+export default operate;
