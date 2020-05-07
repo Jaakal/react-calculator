@@ -18,8 +18,4 @@
 .button:hover {
   cursor: pointer;
 }
-
-.button:focus {
-  outline: none;
-}
 /*# sourceMappingURL=button.css.map */
