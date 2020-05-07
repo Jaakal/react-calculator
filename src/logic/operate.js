@@ -17,6 +17,7 @@ const operate = (numberOne, numberTwo, operation) => {
       operationValue = Big(numberOne).div(numberTwo);
       break;
     default:
+      operationValue = '0';
       break;
   }
 

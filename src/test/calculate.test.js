@@ -43,7 +43,7 @@ test('AC button nullifies next', () => {
 
 test('AC button sets operation undefined', () => {
   const returnData = calculate(data, 'AC');
-  expect(returnData.operation).toBe(undefined);
+  expect(returnData.operation).toBe(null);
 });
 
 test('+/- button sets the total sign opposite', () => {
