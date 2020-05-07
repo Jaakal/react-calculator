@@ -14,7 +14,7 @@ const operate = (numberOne, numberTwo, operation) => {
       operationValue = Big(numberOne).times(numberTwo);
       break;
     case '÷':
-      operationValue = Big(numberOne).div(numberTwo);
+      operationValue = parseFloat(numberTwo) === 0 ? 'Not a number' : Big(numberOne).div(numberTwo);
       break;
     default:
       operationValue = '0';

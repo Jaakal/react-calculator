@@ -75,9 +75,9 @@ class App extends React.Component {
 
           if (operation) {
             if (buttonName === '.') {
-              newValue = next === null ? '0' : next;
+              newValue = next === null || next === 'Not a number'  ? '0' : next;
             } else {
-              newValue = next === null || next === '0' ? '' : next;
+              newValue = next === null || next === '0' || next === 'Not a number' ? '' : next;
             }
 
             newValue += buttonName;
@@ -88,9 +88,9 @@ class App extends React.Component {
             });
           } else {
             if (buttonName === '.') {
-              newValue = total === null ? '0' : total;
+              newValue = total === null || total === 'Not a number'  ? '0' : total;
             } else {
-              newValue = total === null || total === '0' ? '' : total;
+              newValue = total === null || total === '0' || total === 'Not a number' ? '' : total;
             }
 
             newValue += buttonName;
