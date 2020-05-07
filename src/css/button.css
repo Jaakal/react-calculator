@@ -1,0 +1,21 @@
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  height: 100%;
+  font-size: 20px;
+  border: 1px solid #d1d1d1;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=button.css.map */

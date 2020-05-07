@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Calculator from './calculator';
+import App from './components/App';
 
-import './index.css';
+import './css/reset.css';
+import './css/index.css';
 
 ReactDOM.render(
-  <Calculator />,
+  <App />,
   document.getElementById('root'),
 );

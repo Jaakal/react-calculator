@@ -1,0 +1,19 @@
+.display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  padding: 0 10px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: end;
+  background-color: #858694;
+  color: #ffffff;
+}
+/*# sourceMappingURL=display.css.map */
