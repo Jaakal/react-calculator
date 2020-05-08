@@ -1,6 +1,6 @@
 # React Calculator
 
-Simple calculator built using React framework.
+Simple calculator built using React framework. Milestone5
 
 <div class="button-group">
   <a href="https://jaak-calculator.herokuapp.com/" class="button">Live Version</a> |
